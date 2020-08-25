@@ -44,6 +44,7 @@ public class InAppWebViewOptions implements Options<InAppWebView> {
   public Boolean disableHorizontalScroll = false;
   public Boolean disableContextMenu = false;
   public Boolean supportZoom = true;
+  public Boolean wrapContentHeight = false;
 
   public Integer textZoom = 100;
   public Boolean clearSessionCache = false;
@@ -339,6 +340,8 @@ public class InAppWebViewOptions implements Options<InAppWebView> {
         case "disableDefaultErrorPage":
           disableDefaultErrorPage = (Boolean) value;
           break;
+        case "wrapContentHeight":
+          wrapContentHeight = (Boolean) value;
       }
     }
 

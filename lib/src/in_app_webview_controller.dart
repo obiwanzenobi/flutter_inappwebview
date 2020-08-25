@@ -236,6 +236,12 @@ class InAppWebViewController {
           _webview.onCloseWindow(this);
         else if (_inAppBrowser != null) _inAppBrowser.onCloseWindow();
         break;
+      case "onContentSizeChanged":
+        int width = call.arguments["width"];
+        int height = call.arguments["height"];
+        if (_webview != null && _webview is InAppWebView)
+          (_webview as InAppWebView)?.onContentSizeChanged(width, height);
+        break;
       case "onTitleChanged":
         String title = call.arguments["title"];
         if (_webview != null && _webview.onTitleChanged != null)

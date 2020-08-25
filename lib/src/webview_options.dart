@@ -514,6 +514,9 @@ class AndroidInAppWebViewOptions
   ///The default value is `false`.
   bool disableDefaultErrorPage;
 
+  //Sets webview layout parameters height to wrap_content
+  bool wrapContentHeight;
+
   AndroidInAppWebViewOptions({
     this.textZoom = 100,
     this.clearSessionCache = false,
@@ -568,6 +571,7 @@ class AndroidInAppWebViewOptions
     this.scrollBarFadeDuration,
     this.rendererPriorityPolicy,
     this.disableDefaultErrorPage,
+    this.wrapContentHeight
   });
 
   @override
@@ -624,7 +628,8 @@ class AndroidInAppWebViewOptions
       "scrollbarFadingEnabled": scrollbarFadingEnabled,
       "scrollBarFadeDuration": scrollBarFadeDuration,
       "rendererPriorityPolicy": rendererPriorityPolicy?.toMap(),
-      "disableDefaultErrorPage": disableDefaultErrorPage
+      "disableDefaultErrorPage": disableDefaultErrorPage,
+      "wrapContentHeight": wrapContentHeight,
     };
   }
 
@@ -693,6 +698,7 @@ class AndroidInAppWebViewOptions
     options.rendererPriorityPolicy = RendererPriorityPolicy.fromMap(
         map["rendererPriorityPolicy"]?.cast<String, dynamic>());
     options.disableDefaultErrorPage = map["disableDefaultErrorPage"];
+    options.wrapContentHeight = map["wrapContentHeight"];
     return options;
   }
 

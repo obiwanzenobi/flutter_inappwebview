@@ -87,6 +87,7 @@ class InAppWebView extends StatefulWidget implements WebView {
     this.iosOnWebContentProcessDidTerminate,
     this.iosOnDidReceiveServerRedirectForProvisionalNavigation,
     this.gestureRecognizers,
+    this.onContentSizeChanged,
   }) : super(key: key);
 
   @override
@@ -163,6 +164,8 @@ class InAppWebView extends StatefulWidget implements WebView {
   @override
   final Future<bool> Function(InAppWebViewController controller,
       CreateWindowRequest createWindowRequest) onCreateWindow;
+
+  final void Function(int width, int height) onContentSizeChanged;
 
   @override
   final void Function(InAppWebViewController controller) onCloseWindow;
