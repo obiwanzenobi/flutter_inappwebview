@@ -27,21 +27,25 @@ public class InputAwareWebView extends WebView {
   public InputAwareWebView(Context context, View containerView) {
     super(context);
     this.containerView = containerView;
+    setMinimumHeight(50);
   }
 
   public InputAwareWebView(Context context, AttributeSet attrs) {
     super(context, attrs);
     this.containerView = null;
+    setMinimumHeight(50);
   }
 
   public InputAwareWebView(Context context) {
     super(context);
     this.containerView = null;
+    setMinimumHeight(50);
   }
 
   public InputAwareWebView(Context context, AttributeSet attrs, int defaultStyle) {
     super(context, attrs, defaultStyle);
     this.containerView = null;
+    setMinimumHeight(50);
   }
 
   public void setContainerView(View containerView) {
